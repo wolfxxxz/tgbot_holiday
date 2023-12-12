@@ -2,12 +2,12 @@ package main
 
 import (
 	"context"
+	"holiday_bot/internal/config"
+	"holiday_bot/internal/database"
+	"holiday_bot/internal/log"
+	"holiday_bot/internal/repositories"
+	"holiday_bot/internal/telegbot"
 	"net/http"
-	"weekend_bot/internal/config"
-	"weekend_bot/internal/database"
-	"weekend_bot/internal/log"
-	"weekend_bot/internal/repositories"
-	"weekend_bot/internal/telegbot"
 )
 
 var sendWeatherForecast = 6 //12 //hours

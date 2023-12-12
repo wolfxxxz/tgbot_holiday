@@ -1,4 +1,4 @@
-module weekend_bot
+module holiday_bot
 
 go 1.20
 

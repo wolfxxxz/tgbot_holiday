@@ -1,8 +1,8 @@
 package models
 
 import (
+	"holiday_bot/internal/apperrors"
 	"time"
-	"weekend_bot/internal/apperrors"
 
 	"github.com/google/uuid"
 	"go.mongodb.org/mongo-driver/bson/primitive"

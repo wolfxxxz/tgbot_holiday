@@ -2,7 +2,7 @@ package config
 
 import (
 	"fmt"
-	"weekend_bot/internal/apperrors"
+	"holiday_bot/internal/apperrors"
 
 	"github.com/caarlos0/env"
 	"github.com/joho/godotenv"

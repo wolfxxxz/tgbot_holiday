@@ -3,13 +3,13 @@ package telegbot
 import (
 	"context"
 	"fmt"
+	"holiday_bot/internal/apperrors"
+	"holiday_bot/internal/config"
+	"holiday_bot/internal/models"
+	"holiday_bot/internal/repositories"
 	"net/http"
 	"strconv"
 	"time"
-	"weekend_bot/internal/apperrors"
-	"weekend_bot/internal/config"
-	"weekend_bot/internal/models"
-	"weekend_bot/internal/repositories"
 
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
 	"github.com/sirupsen/logrus"
@@ -84,11 +84,11 @@ func (bot *Bot) replyOnNewMessage(ctx context.Context, upd *tgbotapi.Update) *tg
 	var reply string
 	var keyboard tgbotapi.ReplyKeyboardMarkup
 	switch text {
-	case subscribeOnPist:
+	case subscribeOnFast:
 		reply = bot.subscribePist(ctx, chatID, upd)
 	case subscribeOnNextHolliday:
 		reply = bot.subscribeHoliday(ctx, chatID, upd)
-	case unSubscribeOnPist:
+	case unSubscribeOnFast:
 		reply = bot.unSubscribePist(ctx, chatID, upd)
 	case unSubscribeOnNextHolliday:
 		reply = bot.unSubscribeHoliday(ctx, chatID, upd)
@@ -97,8 +97,8 @@ func (bot *Bot) replyOnNewMessage(ctx context.Context, upd *tgbotapi.Update) *tg
 	}
 
 	keyboard = tgbotapi.NewReplyKeyboard(
-		tgbotapi.NewKeyboardButtonRow(tgbotapi.NewKeyboardButton(subscribeOnPist), tgbotapi.NewKeyboardButton(subscribeOnNextHolliday)),
-		tgbotapi.NewKeyboardButtonRow(tgbotapi.NewKeyboardButton(unSubscribeOnPist), tgbotapi.NewKeyboardButton(unSubscribeOnNextHolliday)),
+		tgbotapi.NewKeyboardButtonRow(tgbotapi.NewKeyboardButton(subscribeOnFast), tgbotapi.NewKeyboardButton(subscribeOnNextHolliday)),
+		tgbotapi.NewKeyboardButtonRow(tgbotapi.NewKeyboardButton(unSubscribeOnFast), tgbotapi.NewKeyboardButton(unSubscribeOnNextHolliday)),
 	)
 
 	message := tgbotapi.NewMessage(chatID, reply)

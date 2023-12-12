@@ -4,9 +4,9 @@ import (
 	"context"
 	"errors"
 	"fmt"
-	"weekend_bot/internal/apperrors"
-	"weekend_bot/internal/config"
-	"weekend_bot/internal/models"
+	"holiday_bot/internal/apperrors"
+	"holiday_bot/internal/config"
+	"holiday_bot/internal/models"
 
 	"github.com/sirupsen/logrus"
 	"go.mongodb.org/mongo-driver/mongo"

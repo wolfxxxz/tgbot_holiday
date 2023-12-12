@@ -2,10 +2,10 @@ package main
 
 import (
 	"context"
-	"weekend_bot/internal/config"
-	"weekend_bot/internal/database"
-	"weekend_bot/internal/log"
-	"weekend_bot/internal/repositories"
+	"holiday_bot/internal/config"
+	"holiday_bot/internal/database"
+	"holiday_bot/internal/log"
+	"holiday_bot/internal/repositories"
 )
 
 func main() {

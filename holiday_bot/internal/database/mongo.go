@@ -3,9 +3,9 @@ package database
 import (
 	"context"
 	"fmt"
+	"holiday_bot/internal/apperrors"
+	"holiday_bot/internal/config"
 	"time"
-	"weekend_bot/internal/apperrors"
-	"weekend_bot/internal/config"
 
 	"github.com/sirupsen/logrus"
 	"go.mongodb.org/mongo-driver/mongo"
